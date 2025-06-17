@@ -2,7 +2,7 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import { BASE_URL } from '@env';
-import { useAuthStore } from '../../../../../Work/Mobile/android-sfa-native/src/store/useAuthStore';
+import { useAuthStore } from '../store/useAuthStore.ts';
 
 const axiosInstance = axios.create({
     // baseURL: BASE_URL,

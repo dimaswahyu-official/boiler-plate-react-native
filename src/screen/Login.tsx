@@ -15,12 +15,11 @@ import {useNavigation} from '@react-navigation/native';
 import {Controller, useForm} from 'react-hook-form';
 import {StackNavigationProp} from '@react-navigation/stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Ionicons} from '@expo/vector-icons';
 import Toast from 'react-native-toast-message';
 import {loadAuthState, useAuthStore} from '../store/useAuthStore.ts';
-import {getOrCreateDeviceId} from '../util/deviceId.ts';
 import AuthServices from '../service/authService';
 import Colors from '../../src/constants/Colors';
+import Ionicons from '@react-native-vector-icons/ionicons';
 import {AuthStackParamList} from "./navigation/AuthNavigator";
 import {useLoadingDialogStore} from "../store/useLoadingStore.ts";
 import CustomButton from "../../src/components/CustomButton";
@@ -55,7 +54,7 @@ export default function LoginScreen() {
         showLoadingDialog('Loading...');
         try {
           const ip = 'network-dw-1234';
-          const id = await getOrCreateDeviceId();
+          const id = 'sdsd';
           const savedEmail = await AsyncStorage.getItem('rememberedEmail');
           const savedPassword = await AsyncStorage.getItem(
             'rememberedPassword',
@@ -122,7 +121,7 @@ export default function LoginScreen() {
             contentContainerStyle={styles.container}
             keyboardShouldPersistTaps="handled">
             <Image
-                source={require('../../assets/images/sfa.png')}
+                source={require('../assets/images/sfa.png')}
                 style={styles.logo}
             />
             <Text style={styles.label}>NIK</Text>
@@ -188,7 +187,7 @@ export default function LoginScreen() {
 
             <Toast/>
             <Image
-                source={require('../../assets/images/background-login.png')}
+                source={require('../assets/images/background-login.png')}
                 style={styles.backgroundImage}
             />
         </ScrollView>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, View, ViewStyle, TextStyle } from 'react-native';
-import {Ionicons} from "@expo/vector-icons";
 import Colors from "../constants/Colors";
+import Ionicons from '@react-native-vector-icons/ionicons';
 
 // Props for the custom button
 interface CustomButtonProps {
