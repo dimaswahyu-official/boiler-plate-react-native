@@ -6,8 +6,8 @@ import { useAuthStore } from '../store/useAuthStore.ts';
 
 const axiosInstance = axios.create({
     // baseURL: BASE_URL,
-    // baseURL: "https://api.koneksi.co.id/api/v1",
-    baseURL: "http://10.0.29.47:9003/api/v1",
+    baseURL: "https://api.koneksi.co.id/api/v1",
+    // baseURL: "http://10.0.29.47:9003/api/v1",
     timeout: 10000,
 });
 

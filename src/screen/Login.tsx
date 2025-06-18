@@ -42,7 +42,7 @@ export default function LoginScreen() {
     } = useForm<FormData>();
 
     const [passwordVisible, setPasswordVisible] = useState(false);
-    const [employee_id, setEmployeeId] = useState('farid.rafi@limamail.net');
+    const [email, setEmail] = useState('farid.rafi@limamail.net');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
     const [deviceId, setDeviceId] = useState('');
@@ -65,7 +65,7 @@ export default function LoginScreen() {
           setDeviceId(id);
 
           if (savedRemember === 'true') {
-            setEmployeeId(savedEmail || '');
+            setEmail(savedEmail || '');
             setValue('employee_id', savedEmail || '');
             setPassword(savedPassword || '');
             setValue('password', savedPassword || '');
@@ -88,7 +88,7 @@ export default function LoginScreen() {
 
         try {
             showLoadingDialog('Loading...');
-            const res = await AuthServices.login(employee_id, password, ipAddress, deviceId, platform);
+            const res = await AuthServices.login(email, password, ipAddress, deviceId, platform);
             console.log(res)
 
             if (res.statusCode === 200) {
@@ -120,15 +120,11 @@ export default function LoginScreen() {
         <ScrollView
             contentContainerStyle={styles.container}
             keyboardShouldPersistTaps="handled">
-            <Image
-                source={require('../assets/images/sfa.png')}
-                style={styles.logo}
-            />
             <Text style={styles.label}>NIK</Text>
             <Controller
                 control={control}
                 name="employee_id"
-                defaultValue={employee_id}
+                defaultValue={email}
                 render={({field: {onChange, onBlur, value}}) => (
                     <TextInput
                         style={[styles.input, errors.employee_id && styles.errorInput]}
@@ -136,7 +132,7 @@ export default function LoginScreen() {
                         onBlur={onBlur}
                         onChangeText={text => {
                             onChange(text);
-                            setEmployeeId(text);
+                            setEmail(text);
                         }}
                         keyboardType="default"
                         autoCapitalize="none"

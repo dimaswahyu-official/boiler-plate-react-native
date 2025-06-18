@@ -51,7 +51,7 @@ function HomeScreen() {
             {/* Header */}
             <View style={styles.headerHome}>
                 <View style={styles.profileSection}>
-                    <Text style={styles.profileText}>{user?.employee_name}</Text>
+                    <Text style={styles.profileText}>Hi! Handsome</Text>
                     <Text style={styles.profileSubtext}>Selamat beraktifitas, jaga selalu kesehatan rumah tanggamu</Text>
                 </View>
             </View>

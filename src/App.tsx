@@ -1,22 +1,30 @@
 import React from 'react';
-import { DefaultTheme, NavigationContainer } from '@react-navigation/native'; // Import NavigationContainer
-import { ThemeProvider } from '@react-navigation/native';
-import GlobalDialog from "./components/GlobalDialog";
-import LoadingDialog from "./components/LoadingDialog";
+import { NavigationContainer } from '@react-navigation/native';
+import { DefaultTheme } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { enableScreens } from 'react-native-screens';
+import GlobalDialog from './components/GlobalDialog';
+import LoadingDialog from './components/LoadingDialog';
 import AppNavigator from './AppNavigator';
+
+
+enableScreens();
 
 const Main = () => {
   return (
-    <NavigationContainer theme={DefaultTheme}> {/* Wrap with NavigationContainer */}
-      <GlobalDialog />
-      <LoadingDialog />
-      <AppNavigator /> {/* Your AppNavigator goes here */}
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer theme={DefaultTheme}>
+        <GlobalDialog />
+        <LoadingDialog />
+        <AppNavigator />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
 
 export default function App() {
   return (
     <Main />
-  );
+);
 }
+
