@@ -5,6 +5,7 @@ import { StatusBar } from 'react-native';
 import MainNavigator from "./screen/navigation/MainNavigator";
 import {useLoadingDialogStore} from './store/useLoadingStore.ts';
 import {loadAuthState, useAuthStore} from "./store/useAuthStore";
+import Colors from './constants/Colors.ts';
 
 const AppNavigator = () => {
     const { isAuthenticated } = useAuthStore();
@@ -30,7 +31,7 @@ const AppNavigator = () => {
         <>
             <StatusBar
                 barStyle={ 'light-content'}
-                backgroundColor={'#fff'}
+                backgroundColor={Colors.secondaryColor}
             />
             {isAuthenticated ? <MainNavigator /> : <AuthNavigator />}
         </>
