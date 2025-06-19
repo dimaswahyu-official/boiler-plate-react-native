@@ -18,11 +18,11 @@ interface ForgetPasswordResponse {
 
 class AuthServices {
     // Login function: Accepts credentials, performs authentication, and stores the token
-    static async login(employee_id: string, password: string , ip_address:string, device_info:string, platform:string): Promise<LoginResponse> {
+    static async login(email: string, password: string , ip_address:string, device_info:string, platform:string): Promise<LoginResponse> {
         try {
-            console.log(employee_id, password, ip_address, device_info,platform);
+            console.log(email, password, ip_address, device_info,platform);
             const response = await axiosInstance.post('/auth/login', {
-                employee_id,
+                email,
                 password,
                 ip_address,
                 device_info,

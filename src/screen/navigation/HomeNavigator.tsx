@@ -1,12 +1,9 @@
 import {createStackNavigator} from "@react-navigation/stack";
 import HomeScreen from "../HomeScreen";
-import PrepareScreen from "../menu/preparation/PrepareScreen";
-import PrepareNavigator from "./PrepareNavigator";
-import Colors from "../../../constants/Colors";
+import Colors from "../../constants/Colors";
 import {Image, View} from "react-native";
-import {Ionicons} from "@expo/vector-icons";
+import Ionicons from '@react-native-vector-icons/ionicons';
 import React from "react";
-import RequestNavigator from "./RequestNavigator";
 
 
 export type HomeStackParamList = {
@@ -34,14 +31,12 @@ const HomeStackNavigator = () => (
                     alignItems: 'center',
                     justifyContent: 'space-between',
                 }}>
-                    <Image source={require('../../../assets/images/icon-white-nna.png')}
+                    <Image source={require('../../assets/images/icon-white-nna.png')}
                            style={{width: 100, height: 22, resizeMode: 'contain'}}/>
                     <Ionicons name="notifications-outline" size={24} color="#fff" style={{marginRight: 15}}/>
                 </View>
             ),
         }}/>
-        <HomeStack.Screen name="PrepareScreen" component={PrepareNavigator} options={{headerShown: false}}/>
-        <HomeStack.Screen name="RequestScreen" component={RequestNavigator} options={{headerShown: false}}/>
     </HomeStack.Navigator>
 );
 

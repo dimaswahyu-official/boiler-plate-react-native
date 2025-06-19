@@ -1,15 +1,13 @@
 import React, {useState} from 'react';
 import { StyleSheet, ScrollView, Text, TouchableOpacity, View, Image} from "react-native";
 import {useAuthStore} from "../store/useAuthStore";
-import Ionicons from '@expo/vector-icons/Ionicons';
-import {NavigationProp, useNavigation} from "@react-navigation/native";
+import Ionicons from '@react-native-vector-icons/ionicons';
 import GlobalStyles from "../../../../../../Personal/Project/BoilerPlateReactNative/src/util/GlobalStyles";
 import Colors from "../constants/Colors";
 import StatusCard from "../components/NameCard";
 import MenuGrid from "../components/MenuGrid";
 import {useDialogStore} from "../store/useGlobalDialog";
 import {useLoadingDialogStore} from "../store/useLoadingStore";
-import {navigateToStack} from "../util/helper.ts";
 
 function HomeScreen() {
     const styles = GlobalStyles();
@@ -53,7 +51,7 @@ function HomeScreen() {
             {/* Header */}
             <View style={styles.headerHome}>
                 <View style={styles.profileSection}>
-                    <Text style={styles.profileText}>{user?.employee_name}</Text>
+                    <Text style={styles.profileText}>Hi! Handsome</Text>
                     <Text style={styles.profileSubtext}>Selamat beraktifitas, jaga selalu kesehatan rumah tanggamu</Text>
                 </View>
             </View>
@@ -78,7 +76,7 @@ function HomeScreen() {
                     {showMainCard && (
                         <TouchableOpacity style={stylez.card} onPress={handleToggle}>
                             <Image
-                                source={require('../../assets/icons/mulai-harimu.png')}
+                                source={require('../assets/icons/mulai-harimu.png')}
                                 style={stylez.icon}
                             />
                             <Text style={stylez.title}>Mulai Harimu</Text>

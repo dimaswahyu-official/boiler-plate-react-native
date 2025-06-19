@@ -1,7 +1,6 @@
 // components/GlobalDialog.tsx
 import React, { useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Modal } from 'react-native';
-import { BlurView } from 'expo-blur';
 import LottieView from 'lottie-react-native';
 import { useDialogStore } from '../store/useGlobalDialog';
 
@@ -24,7 +23,7 @@ const GlobalDialog = () => {
 
     return (
         <Modal visible={visible} transparent onRequestClose={hideDialog}>
-            <BlurView intensity={80} tint="dark" style={styles.overlay}>
+            <View style={styles.overlay}>
                 <View style={styles.card}>
                     <LottieView
                         ref={animation}
@@ -35,7 +34,7 @@ const GlobalDialog = () => {
                     />
                     <Text style={styles.title}>{title}</Text>
                 </View>
-            </BlurView>
+            </View>
         </Modal>
     );
 };
